@@ -152,13 +152,6 @@ export default function Home() {
     pdf.setTextColor("#444444");
     pdf.text(`${formData.First_Name}`, textX+50, textY+19, textOptions);
 
-     // Reset color for Static Data
-     pdf.setTextColor("#0A0708");
-    pdf.text(`Aadhaar Card`, textX, textY + 26, textOptions);
-    pdf.text(`:`, textX+45, textY + 26, textOptions);
-    // Reset color for Var Data
-    pdf.setTextColor("#444444");
-    pdf.text(`${formData.Last_Name}`, textX+50, textY + 26, textOptions);
 
      // Reset color for Static Data
      pdf.setTextColor("#0A0708");
@@ -167,6 +160,16 @@ export default function Home() {
     // Reset color for Var Data
     pdf.setTextColor("#444444");
     pdf.text(`${formData.Father_Name}`, textX+50, textY + 33, textOptions);
+
+     // Reset color for Static Data
+     pdf.setTextColor("#0A0708");
+    pdf.text(`Aadhaar Card`, textX, textY + 26, textOptions);
+    pdf.text(`:`, textX+45, textY + 26, textOptions);
+    // Reset color for Var Data
+    pdf.setTextColor("#444444");
+    pdf.text(`${formData.Last_Name}`, textX+50, textY + 26, textOptions);
+
+    
 
      // Reset color for Static Data
      pdf.setTextColor("#0A0708");
@@ -286,7 +289,7 @@ export default function Home() {
                 placeholder="Aadhaar Card Number"
                 {...register("Last_Name", {
                   pattern: {
-                    value: /^[0-9]+$/, // Regular expression to only allow numbers
+                    value: /^\d{12}$/, // Regular expression to only allow numbers
                     message: "Invalid Aadhaar Number, please enter valid Aadhaar number.",
                   },
                   required: "Please enter the 12 Digit Aadhaar Number",
@@ -346,7 +349,7 @@ export default function Home() {
                 {...register("Enrollment_no", {
                   required: "Please enter the Roll Number",
                   pattern: {
-                    value: /^[0-9]+$/, // Regular expression to only allow numbers
+                    value: /^\d{10}$/, // Regular expression to only allow numbers
                     message: "Invalid Roll Number, please enter valid roll number.",
                   },
                 })}
@@ -365,13 +368,13 @@ export default function Home() {
         </form>
       ) : (
         <div className="space-y-4">
-          <h2 className="text-xl font-bold mb-2">Form Preview</h2>
+          <h2 className="text-2xl font-bold mb-2 uppercase text-center ">Form Preview</h2>
           {/* Display preview of form data */}
           {formData && (
             <div ref={pdfRef}>
-              <p className="text-black"><span >Students Name:</span> {formData.First_Name}</p>
-              <p className=" text-black" >Aadhaar Number : {formData.Last_Name}</p>
+              <p><span >Students Name:</span> {formData.First_Name}</p>
               <p>Father's Name: {formData.Father_Name}</p>
+              <p>Aadhaar Number : {formData.Last_Name}</p>
               <p>Mobile Number: {formData.mobileNumber}</p>
               <p>Address: {formData.Address}</p>
               <p>Bihar SI Roll Number: {formData.Enrollment_no}</p>
