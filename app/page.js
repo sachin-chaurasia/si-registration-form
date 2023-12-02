@@ -214,9 +214,9 @@ export default function Home() {
     pdf.text(`1 ) The batch will start from December 7, 2023. `, textX-3, textY+80, textOptions);
     pdf.text(`2 ) This batch will run exclusively at the offline center.`, textX-3, textY + 85, textOptions);
     pdf.text(`    (The Platform Coaching, East of Mussallahpur Hatt, Shahganj). `, textX-3, textY + 90, textOptions);
-    pdf.text(`    (6299270163 , 9334052162 , 7870893933). `, textX-3, textY + 90, textOptions);
-    pdf.text(`3 ) Entry will not be allowed without the ID card.`, textX-3, textY + 95, textOptions);    
-    pdf.text(`4 ) This batch is only for students appearing for the Bihar Daroga exam.`, textX-3, textY + 100, textOptions);
+    pdf.text(`    (6299270163 , 9334052162 , 7870893933). `, textX-3, textY + 95, textOptions);
+    pdf.text(`3 ) Entry will not be allowed without the ID card.`, textX-3, textY + 100, textOptions);    
+    pdf.text(`4 ) This batch is only for students appearing for the Bihar Daroga exam.`, textX-3, textY + 105, textOptions);
 
 
   
