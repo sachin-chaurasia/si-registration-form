@@ -22,3 +22,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@1&display=swap');
 
   @import url('https://fonts.googleapis.com/css2?family=Poppins:ital@1&family=Tiro+Devanagari+Hindi:ital@1&display=swap');
+
+  
+  @keyframes colorChange {
+    0% {
+      color: yellow;
+    }
+    50% {
+      color: rgb(128, 6, 0);
+    }
+    100% {
+      color: yellow;
+    }
+  }
+
+  .animate-color-change {
+    animation: colorChange 1s infinite;
+  }

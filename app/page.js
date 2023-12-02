@@ -4,6 +4,7 @@ import { useForm, Controller } from "react-hook-form";
 import { useRef, useState } from "react";
 import jsPDF from "jspdf";
 import '../styles/globals.css';
+// import CenteredAlert from "@/component/CenteredAlert";
 
 
 
@@ -246,10 +247,17 @@ export default function Home() {
   
 
   return (
-    <main className="max-w-2xl mx-auto mt-8 p-4 flex flex-col">
-    <h1 className="text-2xl text-center font-bold mb-6 underline">Bihar Daroga Selection Batch Registration Form</h1>
-      {!isPreview ? (
-        
+    <main className="max-w-2xl mx-auto mt-4 p-4 flex flex-col">
+    
+    <h1 className="text-2xl text-center font-bold mb-6 ">Bihar Daroga Offline Revision <span className="inline-block px-4 py-2 font-bold text-3xl rounded-full animate-color-change">Free</span>Batch</h1>
+
+    <p className="text-1xl font-bold m-2 border m-auto rounded-sm px-2 border-box ">Batch Start : 07 Dec 2023 </p>
+    
+    
+    <div className="mt-5 border box-content mr-full p-3 rounded-lg">
+    
+      {!isPreview ? (<div>
+        <h2 className="text-2xl font-bold mb-2  text-center  text-red-500  " >Registration Form</h2>
         <form
           onSubmit={handleSubmit(submitHandler)}
           autoComplete="on"
@@ -371,10 +379,10 @@ export default function Home() {
           <button className="block w-full bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mt-4">
             Preview Form
           </button>
-        </form>
-      ) : (
+          </form></div>
+          ) : (
         <div className="space-y-4">
-          <h2 className="text-2xl font-bold mb-2 uppercase text-center ">Form Preview</h2>
+          <h2 className="text-2xl font-bold mb-2  text-center  text-red-500">Form Preview</h2>
           {/* Display preview of form data */}
           {formData && (
             <div ref={pdfRef}>
@@ -404,7 +412,7 @@ export default function Home() {
           
         </div>
       )}
-      
+      </div>
     </main>
   );
 }
