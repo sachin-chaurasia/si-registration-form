@@ -11,7 +11,7 @@ import '../styles/globals.css';
 
 export default function Home() {
   const pdfRef = useRef();
-  const [studentId, setStudentId] = useState(1); 
+  // const [studentId, setStudentId] = useState(1); 
   const {
     register,
     handleSubmit,
@@ -35,7 +35,7 @@ export default function Home() {
   }
 
   function handleConfirm() {
-    setStudentId((prevStudentId) => prevStudentId + 1);
+    // setStudentId((prevStudentId) => prevStudentId + 1);
     downloadPDF();
     
     // fetch api request
@@ -108,6 +108,11 @@ export default function Home() {
    logoImg1.src = '/toa-logo.png'; // Replace with the actual path to your logo image
    pdf.addImage(logoImg1, 'PNG', 165, margin+5, 30, 20); // Adjust the position and size as needed
 
+   // Add a logo
+   const logoImg2 = new Image();
+   logoImg2.src = '/stamp.png'; // Replace with the actual path to your logo image
+   pdf.addImage(logoImg2, 'PNG', 125, margin+80, 40, 40); // Adjust the position and size as needed
+
    // Set base font size
    pdf.setFontSize(20)
    // Reset color for Static Data
@@ -136,13 +141,13 @@ export default function Home() {
     pdf.addFont('Poppins.ttf', 'Poppins', 'Bold');
     pdf.setFont('Poppins');
 
-    // Reset color for Static Data
-    pdf.setTextColor("#0A0708");
-    pdf.text(`Students ID`, textX, textY+12, textOptions);
-    pdf.text(`:`, textX+45, textY+12, textOptions);
-    // Reset color for Var Data
-    pdf.setTextColor("#444444");
-    pdf.text(`${studentId}`, textX+50, textY+12, textOptions);
+    // // Reset color for Static Data
+    // pdf.setTextColor("#0A0708");
+    // pdf.text(`Students ID`, textX, textY+12, textOptions);
+    // pdf.text(`:`, textX+45, textY+12, textOptions);
+    // // Reset color for Var Data
+    // pdf.setTextColor("#444444");
+    // pdf.text(`${studentId}`, textX+50, textY+12, textOptions);
 
      // Reset color for Static Data
      pdf.setTextColor("#0A0708");
