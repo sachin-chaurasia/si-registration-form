@@ -160,19 +160,19 @@ export default function Home() {
 
      // Reset color for Static Data
      pdf.setTextColor("#0A0708");
-    pdf.text(`Father's Name`, textX, textY + 33, textOptions);
-    pdf.text(`:`, textX+45, textY + 33, textOptions);
-    // Reset color for Var Data
-    pdf.setTextColor("#444444");
-    pdf.text(`${formData.Father_Name}`, textX+50, textY + 33, textOptions);
-
-     // Reset color for Static Data
-     pdf.setTextColor("#0A0708");
-    pdf.text(`Aadhaar Card`, textX, textY + 26, textOptions);
+    pdf.text(`Father's Name`, textX, textY + 26, textOptions);
     pdf.text(`:`, textX+45, textY + 26, textOptions);
     // Reset color for Var Data
     pdf.setTextColor("#444444");
-    pdf.text(`${formData.Last_Name}`, textX+50, textY + 26, textOptions);
+    pdf.text(`${formData.Father_Name}`, textX+50, textY + 26, textOptions);
+
+     // Reset color for Static Data
+     pdf.setTextColor("#0A0708");
+    pdf.text(`Aadhaar Card`, textX, textY + 33, textOptions);
+    pdf.text(`:`, textX+45, textY + 33, textOptions);
+    // Reset color for Var Data
+    pdf.setTextColor("#444444");
+    pdf.text(`${formData.Last_Name}`, textX+50, textY + 33, textOptions);
 
     
 
